@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useState, useEffect } from "react";
+import Tours from "./Tours";
+
+
+function App(){
+    const [state,setState]=useState("");
+    
+   const reqFunc = () => {
+    return fetch("https://course-api.com/react-tours-project").then(
+        (res) => res.json()).then(
+            (d) => setState(d))
+  }
+    useEffect(()=>{
+        reqFunc();
+    },[])
+
+return(
+    <main>
+        <Tours state={state} />
+    </main>
+    
+)
 }
-
 export default App;
