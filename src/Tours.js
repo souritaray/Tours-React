@@ -7,12 +7,13 @@ function Tours({state}){
                 <h2>Our Tours</h2>
                 <div className="underline"></div>
             </div>
+            <div>
             {state.map((element)=>{
                 return(
                     <Tour key={element.id} element={element}/>
                 )
             })}
-            
+            </div>
            
         </section>
         </>
