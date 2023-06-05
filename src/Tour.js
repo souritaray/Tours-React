@@ -1,4 +1,4 @@
-function Tour({element}){
+function Tour({element, deleteFunc}){
     const {image, price, info, name, id}=element;
 return(
     <>
@@ -10,7 +10,7 @@ return(
                     <h4 className="tour-price">{price} </h4>
                 </div>
                 <p>{info}<button>Read More</button></p>
-                <button className="delete-btn">Not Interested</button>
+                <button className="delete-btn" onClick={()=>{deleteFunc(id)}}>Not Interested</button>
             </footer>
     </div>
     </>

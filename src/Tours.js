@@ -1,5 +1,6 @@
 import Tour from "./Tour";
-function Tours({state}){
+function Tours({state, deleteFunc}){
+    
     return(
         <>
         <section>
@@ -10,7 +11,7 @@ function Tours({state}){
             <div>
             {state.map((element)=>{
                 return(
-                    <Tour key={element.id} element={element}/>
+                    <Tour key={element.id} element={element} deleteFunc={deleteFunc}/>
                 )
             })}
             </div>
