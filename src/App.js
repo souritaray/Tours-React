@@ -5,11 +5,11 @@ import Tours from "./Tours";
 
 function App(){
     const [state,setState]=useState("");
-    
-   const reqFunc = () => {
-    return fetch("https://course-api.com/react-tours-project").then(
-        (res) => res.json()).then(
-            (d) => setState(d))
+    const url="https://course-api.com/react-tours-project";
+   const reqFunc = async () => {
+   const res = await fetch(url);
+   const state = await res.json();
+   setState(state);
   }
     useEffect(()=>{
         reqFunc();
