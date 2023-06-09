@@ -31,6 +31,13 @@ function App(){
         reqFunc();
     },[])
 
+    if(loading){
+        return (
+            <main>
+                <Loading />
+            </main>
+        )
+    }
 return(
     <main>
         <Tours state={state} deleteFunc={deleteFunc} />
