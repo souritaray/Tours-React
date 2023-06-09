@@ -1,16 +1,25 @@
-
+import Loading from "./Loading.js";
 import { useState, useEffect } from "react";
 import Tours from "./Tours";
 
 
 function App(){
     const [state,setState]=useState([]);
+    const [loading,setLoading]=useState(true);
     const url="https://course-api.com/react-tours-project";
 
    const reqFunc = async () => {
-   const res = await fetch(url);
-   const state = await res.json();
-   setState(state);
+    setLoading(true)
+    try {
+        const res = await fetch(url);
+        const state = await res.json();
+        setLoading(false);
+        setState(state);
+    } catch (error) {
+        setLoading(false);
+        console.log(error);
+    }
+   
   }
 
   const deleteFunc=(id)=>{
