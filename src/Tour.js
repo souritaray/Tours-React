@@ -12,7 +12,7 @@ return(
                     <h4>{name}</h4>
                     <h4 className="tour-price">{price} </h4>
                 </div>
-                <p>{readMore ? info : `${info.substring(0, 200)}` }
+                <p>{readMore ? info : `${info.substring(0, 200)}...` }
                     <button onClick={()=> setReadMore(!readMore) }>
                         { readMore ? "Show Less" : "Show More" }  
                     </button></p>
