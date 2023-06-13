@@ -38,6 +38,19 @@ function App(){
             </main>
         )
     }
+    
+    if(state.length === 0){
+        return(
+            <main>
+                <div className="title">
+                    <h2> no tours left </h2>
+                    <button className="btn" onClick={reqFunc}> Refresh </button>
+                </div>
+            </main>
+            
+        )
+    }
+
 return(
     <main>
         <Tours state={state} deleteFunc={deleteFunc} />
